@@ -1,0 +1,47 @@
+<h1>Listing participants</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Family</th>
+    <th>Address</th>
+    <th>Mailingaddress</th>
+    <th>Email</th>
+    <th>Hphone</th>
+    <th>Wphone</th>
+    <th>Mobile</th>
+    <th>Emergencycontactdetails</th>
+    <th>Heardabout</th>
+    <th>Moreinfo</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @participants.each do |participant| %>
+  <tr>
+    <td><%= participant.firstname %></td>
+    <td><%= participant.lastname %></td>
+    <td><%= participant.family %></td>
+    <td><%= participant.address %></td>
+    <td><%= participant.mailingaddress %></td>
+    <td><%= participant.email %></td>
+    <td><%= participant.hphone %></td>
+    <td><%= participant.wphone %></td>
+    <td><%= participant.mobile %></td>
+    <td><%= participant.emergencycontactdetails %></td>
+    <td><%= participant.heardabout %></td>
+    <td><%= participant.moreinfo %></td>
+    <td><%= participant.date %></td>
+    <td><%= link_to 'Show', participant %></td>
+    <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
+    <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Participant', new_participant_path %>
